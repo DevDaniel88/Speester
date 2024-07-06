@@ -1,0 +1,79 @@
+# WordPress core files
+/wp-admin/
+/wp-includes/
+# WordPress configuration file
+wp-config.php
+# WordPress content directories
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/blogs.dir/
+/wp-content/backup-*/
+# Logs and temp files
+*.log
+*.sql
+*.sql.gz
+*.zip
+*.tar.gz
+*.gzip
+*.bz2
+*.7z
+*.tmp
+*.temp
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# IDE and Editor specific files
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+*.code-workspace
+# Composer dependencies
+/vendor/
+# Node dependencies
+/node_modules/
+# SASS compiled CSS
+*.css.map
+# Grunt file
+.grunt/
+# NPM debug file
+npm-debug.log
+# Yarn debug file
+yarn-error.log
+# PHPStorm
+/.idea
+*.iml
+# Backup files
+*.bak
+*.swp
+*.swo
+*.orig
+*.save
+*.sublime-project
+*.sublime-workspace
+*.htm
+# Vagrant
+.vagrant/
+# Local WP config files
+local-config.php
+local-config.php~
+# SFTP deployment config file
+sftp-config.json
+# Environment variables file
+.env
+# BackupBuddy
+backupbuddy_backups/
+# WP Engine specific files
+.wpengine-conf/
+# CPanel specific files
+.cpanel/
+# Plesk specific files
+.plesk/
+# Coda specific files
+.coda/
+# Translations
+*.mo
+*.po
