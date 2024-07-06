@@ -79,3 +79,4 @@ backupbuddy_backups/
 *.po
 # Additional Rules
 plugins/
+wp-content/languages/
