@@ -1,0 +1,17 @@
+{
+    "apiVersion": 2,
+    "name": "speedster-custom-blocks/bloggallery",
+    "title": "Blog Gallery",
+    "category": "speedster",
+    "icon": "grid-view",
+    "description": "Displays the newest two blog entries with thumbnails, excerpts, and a read more link. Includes a button to load more entries.",
+    "supports": {
+        "html": false
+    },
+    "textdomain": "speedster-custom-blocks",
+    "editorScript": "bloggallery-editor-script",
+    "editorStyle": "bloggallery-editor-style",
+    "script": "bloggallery-script",
+    "style": "bloggallery-style",
+    "render_callback": "speedster_custom_blocks_render_bloggallery"
+}

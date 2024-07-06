@@ -1,0 +1,9 @@
+.image-text-block {
+  text-align: center;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
+.image-text-block img {
+  max-width: 100%;
+  height: auto;
+}/*# sourceMappingURL=editor.css.map */

@@ -1,0 +1,45 @@
+{
+    "apiVersion": 2,
+    "name": "speedster/hero-stage",
+    "title": "Hero Stage",
+    "category": "speedster",
+    "icon": "format-image",
+    "description": "Hero Stage that displays a full screen image with text and button",
+    "attributes": {
+        "UHDimageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "HDimageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "TabletimageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "MobileimageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "text": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonText": {
+            "type": "string",
+            "default": "Read More"
+        },
+        "buttonColor": {
+            "type": "string",
+            "default": "#000000"
+        }
+    },
+    "supports": {
+        "html": false
+    },
+    "textdomain": "speedster-custom-blocks",
+    "editorScript": "speedster-custom-blocks-editor-script",
+    "editorStyle": "speedster-custom-blocks-editor-style",
+    "style": "speedster-custom-blocks-style"
+}
