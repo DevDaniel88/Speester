@@ -77,3 +77,5 @@ backupbuddy_backups/
 # Translations
 *.mo
 *.po
+# Additional Rules
+plugins/
