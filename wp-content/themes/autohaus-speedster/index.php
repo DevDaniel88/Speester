@@ -13,11 +13,26 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <header>
-        <h1><?php bloginfo('name'); ?></h1>
-        <nav>
-            <?php wp_nav_menu(); ?>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" />
+                </a>
+            </div>
+            <nav class="main-navigation">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    'menu_class'     => 'menu',
+                    'container'      => false,
+                ));
+                ?>
+            </nav>
+            <div class="burger-menu">
+                <button id="burger-icon">&#9776;</button>
+            </div>
+        </div>
     </header>
     <main>
         <?php if (have_posts()) : ?>

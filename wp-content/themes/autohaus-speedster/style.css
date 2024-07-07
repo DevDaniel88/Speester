@@ -1,8 +1,64 @@
-/*
-Theme Name: Autohaus Speedster
-Theme URI: http://example.com/autohaus-speedster
-Author: Daniel Scholz
-Author URI: http://example.com
-Description: A custom theme for Autohaus Speedster.
-Version: 1.0
-*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.site-header .logo img {
+  height: 50px;
+}
+
+.main-navigation {
+  display: none;
+}
+.main-navigation .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.main-navigation .menu li {
+  margin: 0 10px;
+}
+.main-navigation .menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.burger-menu {
+  display: flex;
+}
+.burger-menu #burger-icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .main-navigation {
+    display: block;
+  }
+  .burger-menu {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
