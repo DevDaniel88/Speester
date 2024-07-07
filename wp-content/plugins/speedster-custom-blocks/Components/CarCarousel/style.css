@@ -1,0 +1,20 @@
+.car-carousel {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.filter-controls {
+  margin-bottom: 20px;
+}
+.filter-controls label {
+  margin-right: 10px;
+}
+
+.car-item {
+  padding: 10px;
+}
+.car-item img {
+  max-width: 100%;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */

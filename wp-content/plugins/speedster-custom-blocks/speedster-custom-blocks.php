@@ -44,8 +44,8 @@ function speedster_custom_blocks_register_block()
         'render_callback' => 'speedster_custom_blocks_render_bloggallery'
     ));
 }
-
 add_action('init', 'speedster_custom_blocks_register_block');
+
 
 /** CATEGORIES */
 /** Custom Block category */
@@ -82,12 +82,9 @@ function latest_post_link()
 add_shortcode('latest_post', 'latest_post_link');
 
 
-// Server-side rendering function for BlogGallery
+// Server-side rendering function for BlogGallery Component
 function speedster_custom_blocks_render_bloggallery($attributes)
 {
-    // Add debugging output
-    error_log('Rendering Blog Gallery block');
-
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => 2,
@@ -127,3 +124,60 @@ function speedster_custom_blocks_render_bloggallery($attributes)
 
     return $output;
 }
+
+
+// Car Carousel Specifics
+function speedster_custom_blocks_register()
+{
+    register_block_type(__DIR__ . '/Components/CarCarousel');
+}
+add_action('init', 'speedster_custom_blocks_register');
+
+function speedster_custom_blocks_enqueue()
+{
+    // Enqueue Slick Carousel JS and CSS files from src folder
+    wp_enqueue_script(
+        'slick-carousel',
+        plugins_url('src/js/slick.min.js', __FILE__),
+        array('jquery'),
+        '1.8.1',
+        true
+    );
+
+    wp_enqueue_style(
+        'slick-carousel-style',
+        plugins_url('src/css/slick.css', __FILE__),
+        array(),
+        '1.8.1'
+    );
+
+    wp_enqueue_style(
+        'slick-carousel-theme',
+        plugins_url('src/css/slick-theme.css', __FILE__),
+        array('slick-carousel-style'),
+        '1.8.1'
+    );
+
+    wp_enqueue_script(
+        'speedster-car-carousel',
+        plugins_url('dist/car-carousel.js', __FILE__),
+        array('wp-blocks', 'wp-element', 'wp-editor', 'react', 'react-dom'),
+        filemtime(plugin_dir_path(__FILE__) . 'dist/car-carousel.js'),
+        true
+    );
+
+    wp_enqueue_style(
+        'speedster-car-carousel-editor',
+        plugins_url('Components/CarCarousel/editor.css', __FILE__),
+        array('wp-edit-blocks'),
+        filemtime(plugin_dir_path(__FILE__) . 'Components/CarCarousel/editor.css')
+    );
+
+    wp_enqueue_style(
+        'speedster-car-carousel',
+        plugins_url('Components/CarCarousel/style.css', __FILE__),
+        array(),
+        filemtime(plugin_dir_path(__FILE__) . 'Components/CarCarousel/style.css')
+    );
+}
+add_action('enqueue_block_assets', 'speedster_custom_blocks_enqueue');

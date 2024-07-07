@@ -1,0 +1,16 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "speedster/car-carousel",
+    "title": "Car Carousel",
+    "category": "speedster",
+    "icon": "car",
+    "description": "A carousel block that displays car information from a JSON file.",
+    "keywords": ["carousel", "car", "slider"],
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css"
+}
