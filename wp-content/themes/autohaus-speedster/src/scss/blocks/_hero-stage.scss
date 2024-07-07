@@ -1,0 +1,88 @@
+.wp-block-speedster-hero-stage {
+  position: relative;
+  height: 100vh; // Makes the hero stage take the full height of the viewport
+  overflow: hidden;
+  @include margin-balance;
+
+  picture,
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures the image covers the entire hero stage area
+    object-position: center;
+  }
+
+  .content-block {
+    position: absolute;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); // White with slight transparency
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      color: #000;
+      font-size: 2em;
+      text-align: left;
+      margin: 0;
+    }
+
+    .hero-button {
+      @include cool-button; // Using the mixin without changing bg or text color
+      margin-top: 10px;
+      background-color: #ffffff; // Keeping the default background color
+      color: #000; // Keeping the default text color
+    }
+  }
+
+  // Positioning for larger screens
+  .content-block {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    align-items: flex-start;
+  }
+
+  // Responsive adjustments for mobile
+  @media (max-width: 768px) {
+    .content-block {
+      top: 20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      align-items: center;
+      width: 80%;
+    }
+
+    p {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .hero-button {
+      font-size: 0.9em;
+      padding: 8px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    p {
+      font-size: 1.2em;
+    }
+
+    .hero-button {
+      font-size: 0.8em;
+      padding: 6px 12px;
+    }
+  }
+}

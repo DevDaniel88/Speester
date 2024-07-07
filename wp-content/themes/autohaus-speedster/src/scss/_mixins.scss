@@ -1,1 +1,92 @@
 // _mixins.scss
+
+@mixin cool-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    border-color: #000; // Or any other hover border color you prefer
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@mixin margin-balance {
+  margin-left: -$padding-value-def;
+  margin-right: -$padding-value-def;
+  width: calc(100% + ($padding-value-def * 2));
+
+  @media (min-width: 481px) {
+    margin-left: -$padding-value-mobile;
+    margin-right: -$padding-value-mobile;
+    width: calc(100% + ($padding-value-mobile * 2));
+  }
+
+  @media (min-width: 768px) {
+    margin-left: -$padding-value-tablet;
+    margin-right: -$padding-value-tablet;
+    width: calc(100% + ($padding-value-tablet * 2));
+  }
+
+  @media (min-width: 1025px) {
+    margin-left: -$padding-value-hd;
+    margin-right: -$padding-value-hd;
+    width: calc(100% + ($padding-value-hd * 2));
+  }
+
+  @media (min-width: 1441px) {
+    margin-left: -$padding-value-uhd;
+    margin-right: -$padding-value-uhd;
+    width: calc(100% + ($padding-value-uhd * 2));
+  }
+}
+
+@mixin responsive-padding {
+  padding-left: $padding-value-def;
+  padding-right: $padding-value-def;
+
+  @media (min-width: 481px) {
+    padding-left: $padding-value-mobile;
+    padding-right: $padding-value-mobile;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: $padding-value-tablet;
+    padding-right: $padding-value-tablet;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: $padding-value-hd;
+    padding-right: $padding-value-hd;
+  }
+
+  @media (min-width: 1441px) {
+    padding-left: $padding-value-uhd;
+    padding-right: $padding-value-uhd;
+  }
+}
+
+// Define mixins for button styling
+@mixin button-styles($bg-color, $hover-bg-color, $hover-transform) {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.9em;
+  color: #fff;
+  background-color: $bg-color;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    transform: $hover-transform;
+  }
+}

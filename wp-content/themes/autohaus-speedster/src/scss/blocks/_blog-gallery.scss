@@ -1,0 +1,72 @@
+.bloggallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 items per row on large screens
+  gap: 20px; // Adjust the gap between items as needed
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr); // 2 items per row on medium screens
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // 1 item per row on small screens
+  }
+
+  .bloggallery-item {
+    box-sizing: border-box;
+    border: 1px solid #ddd; // Add a nice border to all items
+    padding: 10px; // Optional: add some padding inside the item
+    border-radius: 8px; // Optional: add border radius for rounded corners
+    background-color: #fff; // Optional: background color for items
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; // Align items to the bottom
+    height: 100%; // Make sure the item takes the full height
+
+    .bloggallery-thumbnail {
+      width: 100%;
+      height: 150px; // Set the height to 150px
+      min-height: 150px; // Ensure the min-height is also 150px
+      overflow: hidden;
+      margin-bottom: 15px; // Add margin bottom to image containers
+      background-color: #f0f0f0; // Placeholder background color
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Ensures the image always fits inside
+      }
+    }
+
+    .bloggallery-title {
+      font-size: 1.2em; // Optional: adjust the font size of the title
+      margin-bottom: 10px; // Optional: space between title and excerpt
+    }
+
+    .bloggallery-excerpt {
+      font-size: 1em; // Optional: adjust the font size of the excerpt
+      margin-bottom: 15px; // Space between excerpt and read more link
+    }
+
+    .bloggallery-readmore {
+      @include button-styles(
+        #007bff,
+        #0056b3,
+        translateY(-3px)
+      ); // Use mixin for styling
+      margin-top: 15px; // Add margin-top for spacing
+      align-self: center; // Center the button horizontally
+    }
+  }
+}
+
+// Style the load more button
+.bloggallery-loadmore {
+  @include button-styles(
+    #28a745,
+    #218838,
+    scale(1.05)
+  ); // Use mixin for different styling
+  margin: 20px auto; // Center the button and add margin at the top
+  display: block; // Ensure the button is a block-level element
+  text-align: center; // Center the text within the button
+}

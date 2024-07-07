@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.dataset.page = newPage;
 
       // Check if newPage has posts
-      wp.apiFetch({ path: "/wp/v2/posts?per_page=2&page=" + newPage }).then(
+      wp.apiFetch({ path: "/wp/v2/posts?per_page=4&page=" + newPage }).then(
         (posts) => {
           if (posts.length) {
             var container = document.querySelector(".bloggallery");
@@ -66,9 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 title.className = "bloggallery-title";
                 title.innerHTML = post.title.rendered;
                 content.appendChild(title);
-                var excerpt = document.createElement("div");
+                var excerpt = document.createElement("p");
                 excerpt.className = "bloggallery-excerpt";
-                excerpt.innerHTML = post.excerpt.rendered;
+                excerpt.innerHTML = post.excerpt.rendered.replace(
+                  /<\/?[^>]+(>|$)/g,
+                  ""
+                );
                 content.appendChild(excerpt);
                 var readMore = document.createElement("a");
                 readMore.className = "bloggallery-readmore";
@@ -82,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Check if the next page exists
             wp.apiFetch({
-              path: "/wp/v2/posts?per_page=2&page=" + (newPage + 1),
+              path: "/wp/v2/posts?per_page=4&page=" + (newPage + 1),
             })
               .then((nextPagePosts) => {
                 if (!nextPagePosts.length) {

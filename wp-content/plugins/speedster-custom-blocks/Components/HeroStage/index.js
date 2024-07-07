@@ -19,7 +19,7 @@ registerBlockType("speedster/hero-stage", {
       type: "string",
       default: "",
     },
-    JDimageUrl: {
+    HDimageUrl: {
       type: "string",
       default: "",
     },
@@ -130,21 +130,23 @@ registerBlockType("speedster/hero-stage", {
               alt="Hero Stage: Read our newest blog entry"
             />
           </picture>
-          <RichText
-            tagName="p"
-            value={text}
-            onChange={(value) => setAttributes({ text: value })}
-            placeholder="Enter your text..."
-          />
-          {latestPost && (
-            <a
-              href={latestPost.link}
-              className="hero-button"
-              style={{ backgroundColor: buttonColor }}
-            >
-              {buttonText}
-            </a>
-          )}
+          <div className="content-block">
+            <RichText
+              tagName="h1"
+              value={text}
+              onChange={(value) => setAttributes({ text: value })}
+              placeholder="Enter your text..."
+            />
+            {latestPost && (
+              <a
+                href={latestPost.link}
+                className="hero-button"
+                style={{ backgroundColor: buttonColor }}
+              >
+                {buttonText}
+              </a>
+            )}
+          </div>
         </div>
       </Fragment>
     );
@@ -172,14 +174,16 @@ registerBlockType("speedster/hero-stage", {
             alt="Hero Stage: Read our newest blog entry"
           />
         </picture>
-        <RichText.Content tagName="p" value={text} />
-        <a
-          href="[latest_post]"
-          className="hero-button"
-          style={{ backgroundColor: buttonColor }}
-        >
-          {buttonText}
-        </a>
+        <div className="content-block">
+          <RichText.Content tagName="h1" value={text} />
+          <a
+            href="[latest_post]"
+            className="hero-button"
+            style={{ backgroundColor: buttonColor }}
+          >
+            {buttonText}
+          </a>
+        </div>
       </div>
     );
   },

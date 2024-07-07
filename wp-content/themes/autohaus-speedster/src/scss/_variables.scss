@@ -1,1 +1,30 @@
 // _variables.scss
+
+// FONT
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+
+$line-height-small: 1.4;
+$line-height-medium: 1.6;
+$line-height-large: 1.8;
+
+// BREAKPOINTS
+$breakpoint-small: 600px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+$mobile-breakpoint: 768px;
+
+// COLORS
+$menu-background: #333;
+$menu-color: #fff;
+$submenu-background: #444;
+$submenu-color: #fff;
+
+// PADDING
+$padding-value-def: 16px;
+$padding-value-mobile: 20px;
+$padding-value-tablet: 30px;
+$padding-value-hd: 40px;
+$padding-value-uhd: 60px;

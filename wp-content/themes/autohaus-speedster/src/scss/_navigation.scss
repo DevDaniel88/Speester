@@ -1,16 +1,20 @@
 .site-header {
   position: fixed;
   top: 0;
-  width: 100%;
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  width: 100%;
+  left: 0;
+  right: 0;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    @include responsive-padding;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .logo img {
@@ -49,12 +53,82 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $mobile-breakpoint) {
   .main-navigation {
     display: block;
   }
 
   .burger-menu {
     display: none;
+  }
+}
+
+/* Hide the mobile-navigation by default */
+.mobile-navigation {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it below the header */
+  left: 0;
+  width: 100%;
+  background-color: $menu-background;
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 10px 15px;
+        color: $menu-color;
+        text-decoration: none;
+        @include responsive-padding;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+          background-color: $submenu-background;
+        }
+      }
+
+      /* Dropdown styles */
+      .sub-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color: $submenu-background;
+
+        li {
+          a {
+            padding: 10px 15px;
+            color: $submenu-color;
+
+            &:hover {
+              background-color: darken($submenu-background, 10%);
+            }
+          }
+        }
+      }
+
+      &:hover > .sub-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Show the mobile-navigation when .main-navigation has class active and in mobile view */
+@media (max-width: $mobile-breakpoint) {
+  .main-navigation {
+    &.active {
+      ~ .mobile-navigation {
+        display: block;
+      }
+    }
   }
 }

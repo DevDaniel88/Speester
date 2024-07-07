@@ -26,9 +26,23 @@ const CarCarousel = ({ cars }) => {
     dots: true,
     infinite: filteredCars.length > 1,
     speed: 500,
-    slidesToShow: Math.min(3, filteredCars.length),
+    slidesToShow: 3, // default to show 3 items
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
+    responsive: [
+      {
+        breakpoint: 1024, // screens less than 1024px
+        settings: {
+          slidesToShow: Math.min(2, filteredCars.length), // show 2 items on medium screens
+        },
+      },
+      {
+        breakpoint: 600, // screens less than 600px
+        settings: {
+          slidesToShow: 1, // show 1 item on small screens
+        },
+      },
+    ],
   };
 
   return (

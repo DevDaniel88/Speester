@@ -87,7 +87,7 @@ function speedster_custom_blocks_render_bloggallery($attributes)
 {
     $args = array(
         'post_type' => 'post',
-        'posts_per_page' => 2,
+        'posts_per_page' => 4,
         'paged' => isset($attributes['page']) ? $attributes['page'] : 1
     );
 
@@ -102,8 +102,8 @@ function speedster_custom_blocks_render_bloggallery($attributes)
                 $output .= '<div class="bloggallery-thumbnail">' . get_the_post_thumbnail() . '</div>';
             }
             $output .= '<div class="bloggallery-content">';
-            $output .= '<h2 class="bloggallery-title">' . get_the_title() . '</h2>';
-            $output .= '<div class="bloggallery-excerpt">' . get_the_excerpt() . '</div>';
+            $output .= '<h3 class="bloggallery-title">' . get_the_title() . '</h3>';
+            $output .= '<p class="bloggallery-excerpt">' . get_the_excerpt() . '</p>';
             $output .= '<a class="bloggallery-readmore" href="' . get_permalink() . '">Read More</a>';
             $output .= '</div></div>';
         }
@@ -156,14 +156,6 @@ function speedster_custom_blocks_enqueue()
         plugins_url('src/css/slick-theme.css', __FILE__),
         array('slick-carousel-style'),
         '1.8.1'
-    );
-
-    wp_enqueue_script(
-        'speedster-car-carousel',
-        plugins_url('dist/car-carousel.js', __FILE__),
-        array('wp-blocks', 'wp-element', 'wp-editor', 'react', 'react-dom'),
-        filemtime(plugin_dir_path(__FILE__) . 'dist/car-carousel.js'),
-        true
     );
 
     wp_enqueue_style(

@@ -40,5 +40,11 @@
       "model": "A4",
       "price": 48000,
       "image_url": "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8wc/2023.png?wid=550"
+    },
+    {
+      "brand": "CoolsteMarkeDerWelt",
+      "model": "CoolstesAutoDerWelt",
+      "price": 9999999,
+      "image_url": "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8wc/2023.png?wid=550"
     }
   ]

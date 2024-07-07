@@ -7,4 +7,11 @@ body {
 
 body {
   font-family: Arial, sans-serif;
+  @include responsive-padding;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
 }
