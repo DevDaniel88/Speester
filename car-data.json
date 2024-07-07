@@ -1,0 +1,44 @@
+[
+    {
+      "brand": "Toyota",
+      "model": "Corolla",
+      "price": 20000,
+      "image_url": "https://kong-proxy-intranet.toyota-europe.com/c1-images/resize/ccis/680x680/zip/de/product-token/b704e95e-b7c3-4021-955b-0929d4f76b58/vehicle/a98a09dc-e078-4578-a407-3ee1b9b0f995/padding/50,50,50,50/image-quality/70/day-exterior-04_040.png"
+    },
+    {
+      "brand": "Honda",
+      "model": "Civic",
+      "price": 22000,
+      "image_url": "https://www.honda-haeusler-muenchen.de/picserver1/userdata/1/36081/3FAdVwEMPE/dws_freisteller_560x420_civic.png"
+    },
+    {
+      "brand": "Ford",
+      "model": "Mustang",
+      "price": 35000,
+      "image_url": "https://www.napaford.com/static/dealer-15680/2019_Roush_Stage_Mustang_3.png"
+    },
+    {
+      "brand": "Chevrolet",
+      "model": "Camaro",
+      "price": 40000,
+      "image_url": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2024/performance/camaro/design/v2/2024-camaro-collector-ed-4v2.png?imwidth=960"
+    },
+    {
+      "brand": "BMW",
+      "model": "3 Series",
+      "price": 45000,
+      "image_url": "https://www.bmw.de/content/dam/bmw/common/all-models/3-series/sedan/2024/navigation/bmw-3-series-ice-lci-modelfinder.png"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "C-Class",
+      "price": 50000,
+      "image_url": "https://www.mercedes-benz.de/content/dam/hq/passengercars/cars/c-class/c-class-saloon-w206-pi/modeloverview/06-2022/images/mercedes-amg-c-class-w206-modeloverview-696x392-06-2022.png"
+    },
+    {
+      "brand": "Audi",
+      "model": "A4",
+      "price": 48000,
+      "image_url": "https://mediaservice.audi.com/media/live/50900/fly1400x601n8/8wc/2023.png?wid=550"
+    }
+  ]

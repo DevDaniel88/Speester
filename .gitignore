@@ -78,5 +78,8 @@ backupbuddy_backups/
 *.mo
 *.po
 # Additional Rules
-plugins/
-wp-content/languages/
+/plugins/
+/wp-content/languages/
+wp-content/plugins/*
+!wp-content/plugins/speedster-custom-blocks/
+wp-content/plugins/speedster-custom-blocks/node_modules/
